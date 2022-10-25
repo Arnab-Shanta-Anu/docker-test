@@ -1,11 +1,9 @@
 FROM node:16-alpine 
 
-WORKDIR /backend
+WORKDIR /frontend
 
 COPY . .
 
-RUN npm install
-
-EXPOSE 4000
+EXPOSE 3000
 
 CMD ["npm", "run", "dev"]

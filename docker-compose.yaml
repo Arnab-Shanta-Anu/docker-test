@@ -7,14 +7,15 @@ services:
     ports:
       - "4000:4000"
     volumes:
-      - ./backend:/app
-      - /app/node_modules
+      - ./backend:/backend
+      - /backend/node_modules
   
-  # frontend: 
-  #   build: ./backend
-  #   container_name: backend_c
-  #   ports:
-  #     - "4000:4000"
-  #   volumes:
-  #     - ./backend:/app
-  #     - ./app/node_modules
+  frontend:
+    stdin_open: true 
+    build: ./frontend
+    container_name: frontend_c
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./frontend:/app
+      - /frontend/node_modules
