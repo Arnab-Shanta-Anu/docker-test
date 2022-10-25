@@ -1,0 +1,20 @@
+version: "2.12.0"
+services:
+  
+  backend: 
+    build: ./backend
+    container_name: backend_c
+    ports:
+      - "4000:4000"
+    volumes:
+      - ./backend:/app
+      - /app/node_modules
+  
+  # frontend: 
+  #   build: ./backend
+  #   container_name: backend_c
+  #   ports:
+  #     - "4000:4000"
+  #   volumes:
+  #     - ./backend:/app
+  #     - ./app/node_modules
