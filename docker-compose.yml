@@ -1,7 +1,8 @@
-version: "2.12.0"
+version: "3"
 services:
   
   backend: 
+    image: blazebd/docker-test:node
     build: ./backend
     container_name: backend_c
     ports:
@@ -11,11 +12,10 @@ services:
       - /backend/node_modules
   
   frontend:
+    image: blazebd/docker-test:next
     stdin_open: true 
     build: ./frontend
     container_name: frontend_c
     ports:
       - "3000:3000"
-    volumes:
-      - ./frontend:/app
-      - /frontend/node_modules
+  
